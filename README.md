@@ -3,7 +3,7 @@
 
 ~ screen -S faucet-megaETH
 
-~ git clone https://github.com/galipeli/megaethaucet.git && cd megaethaucet
+~ git clone https://github.com/galipeli/megaethaucet.git  && cd megaethaucet
 
 ~ chmod +x setup.sh
 
