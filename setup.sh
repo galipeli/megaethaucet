@@ -1,43 +1,25 @@
 #!/bin/bash
 
-# Update package list
-echo "Updating package list..."
+# Update package list dan instal Python 3, pip3, python3-venv jika belum terinstal
+echo "Updating package list and installing Python3, pip3, python3-venv..."
+
+# Instal Python 3, pip3, python3-venv, dan dependencies lain jika belum ada
 sudo apt-get update -y
+sudo apt-get install python3 python3-pip python3-venv -y
 
-# Install Python 3 dan pip3 jika belum terinstal
-echo "Checking if Python 3 and pip3 are installed..."
-
-# Install Python 3
-if ! command -v python3 &> /dev/null
-then
-    echo "Python3 not found, installing..."
-    sudo apt-get install python3 python3-dev python3-venv -y
-else
-    echo "Python 3 is already installed."
-fi
-
-# Install pip3
-if ! command -v pip3 &> /dev/null
-then
-    echo "pip3 not found, installing..."
-    sudo apt-get install python3-pip -y
-else
-    echo "pip3 is already installed."
-fi
-
-# Buat virtual environment
-echo "Setting up Python virtual environment..."
+# Membuat virtual environment
+echo "Creating Python virtual environment..."
 python3 -m venv myenv
 
 # Aktifkan virtual environment
 source myenv/bin/activate
 
-# Install modul yang dibutuhkan (seperti web3)
+# Install pip dan modul yang dibutuhkan (seperti web3)
 echo "Installing required Python modules..."
 pip install --upgrade pip
 pip install web3==6.20.1 requests
 
-# Pastikan skrip Python ada dan bisa dijalankan
+# Pastikan file Python ada dan jalankan
 if [ -f "./megaethfaucet_sctg.py" ]; then
     echo "Running the Python script..."
     python3 megaethfaucet_sctg.py
