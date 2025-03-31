@@ -8,7 +8,7 @@ fi
 
 # Menghapus karakter CRLF (Windows line endings) dan mengganti dengan LF (Unix line endings)
 echo "Memastikan line endings diubah menjadi Unix LF..."
-sed -i 's/\r//' setup.sh
+dos2unix setup.sh
 
 # Update dan upgrade paket-paket yang ada
 echo "Memperbarui dan meng-upgrade sistem..."
