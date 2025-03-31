@@ -3,18 +3,8 @@
 
 screen -S MegaETH
 
+1. git clone https://github.com/galipeli/megaethaucet.git && cd megaethaucet
 
-```bash
-git clone https://github.com/galipeli/megaethaucet.git
-cd megaethaucet
+2. sudo apt-get install dos2unix && dos2unix setup.sh
 
-#
-```bash
-sudo apt-get install dos2unix
-dos2unix setup.sh
-
-#
-```bash
-chmod +x setup.sh
-./setup.sh
-
+3. chmod +x setup.sh && ./setup.sh
