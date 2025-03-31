@@ -1,8 +1,10 @@
 # megaethaucet
 # cara menjalankan
 
-git clone https://github.com/galipeli/megaethaucet.git
+~ screen -S faucet-megaETH
 
-chmod +x setup.sh
+~ git clone https://github.com/galipeli/megaethaucet.git
 
-./setup.sh
+~ chmod +x setup.sh
+
+~ ./setup.sh
