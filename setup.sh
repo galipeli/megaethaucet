@@ -1,4 +1,3 @@
-screen -S faucet-mega
 python3 -m venv myenv
 source myenv/bin/activate
 sudo apt-get install python3.12-dev
