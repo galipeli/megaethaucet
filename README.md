@@ -1,10 +1,10 @@
-# megaethaucet
-# cara menjalankan
+## Cara Menjalankan
 
-~ screen -S faucet-megaETH
+Clone repository ini:
 
-~ git clone https://github.com/galipeli/megaethaucet.git  && cd megaethaucet
+```bash
+git clone https://github.com/galipeli/megaethaucet.git
+cd megaethaucet
+chmod +x setup.sh
+./setup.sh
 
-~ chmod +x setup.sh
-
-~ ./setup.sh
