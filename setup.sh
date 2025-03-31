@@ -6,6 +6,10 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
+# Menghapus karakter CRLF (Windows line endings) dan mengganti dengan LF (Unix line endings)
+echo "Memastikan line endings diubah menjadi Unix LF..."
+sed -i 's/\r//' setup.sh
+
 # Update dan upgrade paket-paket yang ada
 echo "Memperbarui dan meng-upgrade sistem..."
 apt-get update -y && apt-get upgrade -y
@@ -19,12 +23,12 @@ echo "Menginstal dependensi..."
 pip3 install --upgrade pip
 pip3 install web3==6.20.1
 
-# Buat dan aktifkan virtual environment
+# Membuat environment virtual Python
 echo "Membuat environment virtual Python..."
 python3 -m venv myenv
 source myenv/bin/activate
 
-# Menginstal kembali dependensi dalam environment virtual
+# Menginstal dependensi dalam environment virtual
 echo "Menginstal dependensi dalam virtual environment..."
 pip install -r requirements.txt
 
